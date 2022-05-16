@@ -1,0 +1,46 @@
+<!-- <mat-grid-list cols="4">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile>
+</mat-grid-list> -->
+<!-- <mat-grid-list cols="2" class="main-menu">
+    <mat-grid-tile
+    class="contacts-view main-menu-item"
+    style="background: lightblue"
+    >
+    Contacts
+    <mat-grid-tile-footer>
+        Options
+    </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile
+    class="messages-view main-menu-item"
+    style="background: lightgreen"
+    >
+    Messages
+    </mat-grid-tile>
+</mat-grid-list> -->
+<div class="main-menu">
+    <div class="left-view main-menu-item-left">
+        <div class="left-view-main main-menu-item">
+            Left
+        </div>
+        <div class="left-view-footer">
+            <section>
+                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <mat-icon>home</mat-icon>
+                </button>
+                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                    <mat-icon ></mat-icon>
+                  </button>
+            </section>
+        </div>
+    </div>
+    <div class="right-view main-menu-item">
+        Right
+    </div>
+</div>

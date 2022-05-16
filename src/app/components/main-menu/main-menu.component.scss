@@ -1,0 +1,38 @@
+.main-menu {
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.left-view-main {
+    background-color: aqua;
+    height: 100%;
+}
+
+.left-view-footer {
+    background-color: green;
+    height: fit-content;
+}
+
+.left-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.right-view {
+    background-color: red;
+}
+
+.main-menu-item {
+    flex-grow: 1;
+    flex-basis: 100px;
+}
+
+.menu-item-left {
+    
+}
