@@ -8,18 +8,23 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { MessageMenuItem } from './components/message-menu-item/message-menu-item.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    MessageMenuItem,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     // MatGridListModule,
+    MatCardModule,
     MatButtonModule,
     MatIconModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

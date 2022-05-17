@@ -1,0 +1,86 @@
+.message-menu-item-avatar {
+    // width: 50px;
+    // height: 50px;
+    background-size: cover;
+}
+
+.message-menu-item {
+    // height: 40px;
+    // position: relative;
+    background-color: gray;
+    height: 70px !important;
+    min-width: 350px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message-menu-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    /* make a square container */
+    width: 55px;
+    height: 55px;
+    min-width: 55px !important;
+    min-height: 55px !important;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    overflow:hidden;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
+    /* center the image vertically and horizontally */
+    background-position: center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}
+
+.message-menu-content {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 5px;
+    min-width: 0;
+}
+
+.info-item-1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.info-item-2 {
+    // flex-shrink: 0;
+}
+
+.message-menu-content-item {
+    
+}
+
+.message-item-title {
+    color: red;
+}
+
+.message-item-message {
+    color: green;
+
+display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
