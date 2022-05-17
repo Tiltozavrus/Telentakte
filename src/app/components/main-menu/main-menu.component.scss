@@ -33,6 +33,12 @@
     flex-basis: 100px;
 }
 
-.menu-item-left {
-    
+.footer-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.footer-item {
+    flex-grow: 1;
 }

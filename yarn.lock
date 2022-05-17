@@ -1240,6 +1240,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@juggle/resize-observer@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
+  integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
+
 "@ngtools/webpack@13.3.5":
   version "13.3.5"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-13.3.5.tgz#bb7dde18fb30919c49c4a25635b94381d19b7622"
@@ -4551,6 +4556,11 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+ng-resize-observer@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ng-resize-observer/-/ng-resize-observer-1.0.2.tgz#a0a5e19ab504041f23dbaace0a8ebb40a66993a1"
+  integrity sha512-wBU3cVGgDQT26orUM827Et3gXlvyIS0Ged0UbX0I2lK77/lwGg6dSsS9N+mU4gldW01ZqUa0Vcox7tXNevfPOw==
 
 nice-napi@^1.0.2:
   version "1.0.2"
