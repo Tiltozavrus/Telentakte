@@ -1,0 +1,38 @@
+<div class="message-menu-item">
+       <div class="message-menu-content">
+            <div 
+            class="avatar message-menu-content-item"
+            style="background-image: url('{{item.chatImageUrl}}');"
+            >
+            </div>
+            
+            <div class="info">
+                <!-- Имя пользователя/чата последние сообщение -->
+                <div class="info-item-1">
+                    <div 
+                    class="message-item-title"
+                    >
+                        {{item.title}}
+                    </div>
+                    <div
+                    class="message-item-sender"
+                    *ngIf="item.sender"
+                    >
+                        {{item.sender}}
+                    </div>
+                    <div 
+                    class="message-item-message"
+                    [ngStyle]="{'-webkit-line-clamp': item.sender ? 1 : 2}"
+                    >
+                        {{item.lastMessage}}
+                    </div>
+                </div>
+                <!-- Дата и еще инфа  -->
+                <div class="info-item-2">
+                    <div class="date">
+                        {{item.date}}
+                    </div>
+                </div>
+            </div>
+       </div>
+</div>

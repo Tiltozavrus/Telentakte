@@ -1,3 +1,5 @@
+@import './../../../theme.scss';
+
 .message-menu-item-avatar {
     // width: 50px;
     // height: 50px;
@@ -7,7 +9,7 @@
 .message-menu-item {
     // height: 40px;
     // position: relative;
-    background-color: gray;
+    background-color: $background-color;
     height: 70px !important;
     min-width: 350px !important;
     overflow: hidden;
@@ -51,6 +53,7 @@
 }
 
 .info {
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -61,6 +64,7 @@
 .info-item-1 {
     text-overflow: ellipsis;
     overflow: hidden;
+    flex-grow: 1;
 }
 .info-item-2 {
     // flex-shrink: 0;
@@ -71,16 +75,32 @@
 }
 
 .message-item-title {
-    color: red;
+    color: white;
+    font-weight: bold;
+    @extend .trunctaed;
+    -webkit-line-clamp: 1; /* количество строк */
+}
+
+.message-item-sender{
+    color: white;
+    -webkit-line-clamp: 1; /* количество строк */
+    @extend .trunctaed
 }
 
 .message-item-message {
-    color: green;
+    @extend .trunctaed;
+    color: $icon-fill;
+    -webkit-line-clamp: 2; /* количество строк */
+}
 
-display: block;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* количество строк */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.trunctaed {
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date {
+    color: $icon-fill;
 }

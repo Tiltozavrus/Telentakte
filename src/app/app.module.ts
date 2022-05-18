@@ -10,11 +10,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MessageMenuItem } from './components/message-menu-item/message-menu-item.component';
 import {MatCardModule} from '@angular/material/card';
+import { SvgButton } from './components/svg-button/svg-button.component';
+import { MessagesMenuComponent } from './components/messages-menu/messages-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
     MessageMenuItem,
+    SvgButton,
+    MessagesMenuComponent,
   ],
   imports: [
     BrowserModule,

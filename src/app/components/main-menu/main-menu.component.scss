@@ -1,3 +1,5 @@
+@import './../../../theme.scss';
+
 .main-menu {
     display: flex;
     flex-wrap: wrap;
@@ -8,25 +10,29 @@
 }
 
 .left-view-main {
-    background-color: aqua;
+    background-color: $background-color;
     height: 100%;
+    overflow: scroll;
 }
 
 .left-view-footer {
-    background-color: green;
+    background-color: $background-color;
     height: fit-content;
+    padding: 5px;
+    border-top: 1px solid $element-color;
+    overflow: visible;
 }
 
 .left-view {
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: min-content;
 }
 
 .right-view {
-    background-color: red;
+    background-color: $element-color;
 }
 
 .main-menu-item {
@@ -42,4 +48,17 @@
 
 .footer-item {
     flex-grow: 1;
+}
+
+svg-button {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.svg-image {
+    width: 40px;
+    height: 40px;
+    // filter: invert(50%) sepia(69%) saturate(3976%) hue-rotate(164deg) brightness(98%) contrast(101%);
 }

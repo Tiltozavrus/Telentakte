@@ -6,23 +6,27 @@
         <div 
         class="left-view-main main-menu-item"
         >
-            Left
+            <messages-menu></messages-menu>
         </div>
         <div 
         class="left-view-footer footer-flex"
         >
-        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" class="footer-item">
-            <mat-icon>home</mat-icon>
-        </button>
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" class="footer-item">
-            <mat-icon>menu</mat-icon>
-        </button>
+
+        <svg-button 
+            src="assets/svg/messages.svg"
+            (click)="messagesClick()"
+            [active]="selectedIcon === 'messages'"
+        ></svg-button>
+        <svg-button 
+            src="assets/svg/settings.svg"
+            (click)="settingsClick()"
+            [active]="selectedIcon === 'options'"
+        ></svg-button>
         </div>
     </div>
     <div 
     class="right-view main-menu-item"
     [hidden]="hideRight"
     >
-        Right
     </div>
 </div>

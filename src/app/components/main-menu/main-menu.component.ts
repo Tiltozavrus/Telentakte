@@ -1,6 +1,12 @@
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import { MessageItem } from "../../models/MessageItem/MessageItem";
 
 // import { ResizedEvent } from 'angular-resize-event';
+
+export enum Icons {
+    Messages = "messages",
+    Options = "options"
+}
 
 @Component({
     selector: 'main-menu',
@@ -11,6 +17,15 @@ import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
 })
 export class MainMenuComponent implements OnInit {
     public hideRight!: boolean
+    public selectedIcon: Icons = Icons.Messages
+
+    public item: MessageItem = {
+        chatImageUrl: "https://sun9-76.userapi.com/s/v1/if2/r_l7DbiazSoO-I-5xbeKbeJh2lAOB8_eXAGRLKsAgF6IkimMMb2lc0_OUdH8jclo-_-d9MT7NMYUZqrzWr9w5vUm.jpg?size=1436x2160&quality=95&type=album",
+        title: "Демин",
+        lastMessage: "Some message ad asd as das das das das das d asd jlk jlk j lkj kl jlklkjkl kl jkl jkl",
+        date: "17.10.21",
+        // sender: "Вы"
+    }
 
     width = 0
     ngOnInit(): void {
@@ -32,5 +47,13 @@ export class MainMenuComponent implements OnInit {
         } else {
             this.hideRight = false
         }
+    }
+
+    messagesClick() {
+        this.selectedIcon = Icons.Messages
+    }
+
+    settingsClick() {
+        this.selectedIcon = Icons.Options
     }
 }
