@@ -1,5 +1,5 @@
 @import './../../../theme.scss';
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 .message-menu-item-avatar {
     // width: 50px;
     // height: 50px;
@@ -46,7 +46,7 @@
 }
 
 .message-menu-content {
-    padding: 5px;
+    padding: 8px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -76,18 +76,26 @@
 
 .message-item-title {
     color: white;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    font-size: 14px;
     @extend .trunctaed;
     -webkit-line-clamp: 1; /* количество строк */
 }
 
 .message-item-sender{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
     color: white;
     -webkit-line-clamp: 1; /* количество строк */
     @extend .trunctaed
 }
 
 .message-item-message {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
     @extend .trunctaed;
     color: $icon-fill;
     -webkit-line-clamp: 2; /* количество строк */
@@ -103,4 +111,6 @@
 
 .date {
     color: $icon-fill;
+    font-size: 12px;
+    margin: 4px;
 }

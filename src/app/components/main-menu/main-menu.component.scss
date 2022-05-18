@@ -42,8 +42,8 @@
 
 .footer-flex {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction:row;
+    flex-wrap:wrap;
 }
 
 .footer-item {
@@ -58,7 +58,7 @@ svg-button {
 }
 
 .svg-image {
-    width: 40px;
-    height: 40px;
-    // filter: invert(50%) sepia(69%) saturate(3976%) hue-rotate(164deg) brightness(98%) contrast(101%);
+    width: 36px;
+    height: 36px;
+    //filter: invert(50%) sepia(69%) saturate(3976%) hue-rotate(164deg) brightness(98%) contrast(101%);
 }
