@@ -11,14 +11,18 @@
         <div 
         class="left-view-footer footer-flex"
         >
-
+        <svg-button 
+            src="assets/svg/phone.svg"
+            (click)="phoneClick()"
+            [active]="selectedIcon === 'phone'"
+        ></svg-button>
         <svg-button 
             src="assets/svg/messages.svg"
             (click)="messagesClick()"
             [active]="selectedIcon === 'messages'"
         ></svg-button>
         <svg-button 
-            src="assets/svg/settings.svg"
+            src="assets/svg/setting.svg"
             (click)="settingsClick()"
             [active]="selectedIcon === 'options'"
         ></svg-button>
