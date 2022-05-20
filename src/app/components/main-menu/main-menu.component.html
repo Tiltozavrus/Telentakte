@@ -5,8 +5,10 @@
     >
         <div 
         class="left-view-main main-menu-item"
+        [ngSwitch]="selectedIcon"
         >
-            <messages-menu></messages-menu>
+            <messages-menu *ngSwitchCase="'messages'"></messages-menu>
+            
         </div>
         <div 
         class="left-view-footer footer-flex"

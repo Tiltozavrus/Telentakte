@@ -12,6 +12,7 @@ import { MessageMenuItem } from './components/message-menu-item/message-menu-ite
 import {MatCardModule} from '@angular/material/card';
 import { SvgButton } from './components/svg-button/svg-button.component';
 import { MessagesMenuComponent } from './components/messages-menu/messages-menu.component';
+import { OptionsMenu } from './components/options-menu/options-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { MessagesMenuComponent } from './components/messages-menu/messages-menu.
     MessageMenuItem,
     SvgButton,
     MessagesMenuComponent,
+    OptionsMenu,
   ],
   imports: [
     BrowserModule,

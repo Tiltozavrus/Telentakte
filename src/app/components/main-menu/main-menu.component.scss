@@ -13,6 +13,7 @@
     background-color: $background-color;
     height: 100%;
     overflow: scroll;
+    min-width: 358px !important;
 }
 
 .left-view-footer {
