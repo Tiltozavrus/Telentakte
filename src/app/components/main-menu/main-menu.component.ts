@@ -5,7 +5,8 @@ import { MessageItem } from "../../models/MessageItem/MessageItem";
 
 export enum Icons {
     Messages = "messages",
-    Options = "options"
+    Options = "options",
+    Phone = "phone"
 }
 
 @Component({
@@ -55,5 +56,8 @@ export class MainMenuComponent implements OnInit {
 
     settingsClick() {
         this.selectedIcon = Icons.Options
+    }
+    phoneClick() {
+        this.selectedIcon = Icons.Phone
     }
 }
