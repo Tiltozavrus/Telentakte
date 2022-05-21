@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { MessageItem } from "../../models/MessageItem/MessageItem";
 
 // import { ResizedEvent } from 'angular-resize-event';
@@ -11,12 +12,17 @@ export enum Icons {
 
 @Component({
     selector: 'main-menu',
-    templateUrl: 'main-menu.component.html',
+    templateUrl: './main-menu.component.html',
     styleUrls: [
-        'main-menu.component.scss'
+        './main-menu.component.scss'
     ],
 })
 export class MainMenuComponent implements OnInit {
+
+    constructor(
+        private readonly router: Router,
+    ) {}
+
     public hideRight!: boolean
     public selectedIcon: Icons = Icons.Messages
 
@@ -31,8 +37,17 @@ export class MainMenuComponent implements OnInit {
     width = 0
     ngOnInit(): void {
         this.width = window.innerWidth
-
         this.calcHideRight()
+        this.router.navigate(
+            [
+                {
+                    outlets: {
+                        left: ['left', 'messages', 'menu'],
+                        right: ['right', 'messages', 'chat', 'default'],
+                    }
+                }
+            ]
+        )
     }
 
     @HostListener('window:resize', ['$event'])
@@ -52,6 +67,7 @@ export class MainMenuComponent implements OnInit {
 
     messagesClick() {
         this.selectedIcon = Icons.Messages
+        
     }
 
     settingsClick() {

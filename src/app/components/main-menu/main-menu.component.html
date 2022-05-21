@@ -5,34 +5,38 @@
     >
         <div 
         class="left-view-main main-menu-item"
-        [ngSwitch]="selectedIcon"
         >
-            <messages-menu *ngSwitchCase="'messages'"></messages-menu>
-            
+            <router-outlet name="left"></router-outlet>
         </div>
         <div 
         class="left-view-footer footer-flex"
         >
-        <svg-button 
-            src="assets/svg/phone.svg"
-            (click)="phoneClick()"
-            [active]="selectedIcon === 'phone'"
-        ></svg-button>
-        <svg-button 
-            src="assets/svg/messages.svg"
-            (click)="messagesClick()"
-            [active]="selectedIcon === 'messages'"
-        ></svg-button>
-        <svg-button 
-            src="assets/svg/setting.svg"
-            (click)="settingsClick()"
-            [active]="selectedIcon === 'options'"
-        ></svg-button>
+            <svg-button 
+                src="assets/svg/messages.svg"
+                (click)="messagesClick()"
+                [active]="selectedIcon === 'messages'"
+                [routerLink]="[
+                {
+                    outlets: {
+                        left: ['left', 'messages', 'menu'],
+                        right: ['right', 'messages', 'chat', 'default']
+                    }
+                }
+                ]"
+            ></svg-button>
+            <svg-button 
+                src="assets/svg/setting.svg"
+                (click)="settingsClick()"
+                [active]="selectedIcon === 'options'"
+                
+            ></svg-button>
         </div>
     </div>
     <div 
     class="right-view main-menu-item"
     [hidden]="hideRight"
+    [ngClass]="{'on_center': !hideRight}"
     >
+        <router-outlet name="right"></router-outlet>
     </div>
 </div>
