@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import {Router } from "@angular/router";
 import { MessageItem } from "../../models/MessageItem/MessageItem";
 
 
@@ -10,9 +11,23 @@ import { MessageItem } from "../../models/MessageItem/MessageItem";
     ]
 })
 export class MessagesMenuPage {
+    constructor (
+        private readonly router: Router
+    ) {}
     public activeItemId: number = -1
 
     onElemClick(id: number) {
+        // Navigate to chat
+        // TODO
+        // this.router.navigate(
+        //     [
+        //         {
+        //             outlets: {
+        //                 right: ['right', 'messages', 'chat', 'default']
+        //             }
+        //         }
+        //     ]
+        // )
         this.activeItemId = id
     }
 
