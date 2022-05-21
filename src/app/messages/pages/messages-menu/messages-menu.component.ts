@@ -10,11 +10,14 @@ import { MessageItem } from "../../models/MessageItem/MessageItem";
     ]
 })
 export class MessagesMenuPage {
-    public activeItemId: string = "none"
+    public activeItemId: number = -1
 
-    onElemClick(id: string) {
+    onElemClick(id: number) {
         this.activeItemId = id
-        console.log("new active id: ", id)
+    }
+
+    isActive(i: number) {
+        return i == this.activeItemId
     }
 
     public items: MessageItem[] = [

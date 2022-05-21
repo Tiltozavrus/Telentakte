@@ -2,8 +2,9 @@
     <div *ngFor="let item of items; let i = index" class="item">
         <message-menu-item 
         [item]="item" 
-        id="item-{{i}}"
-        (click)="onElemClick($event)"
+        [itemId]="i"
+        (onElemclick)="onElemClick($event)"
+        [active]="isActive(i)"
         >
         </message-menu-item>
         <div class="message-menu-divider">

@@ -1,6 +1,7 @@
 <div 
 class="message-menu-item"
 (click)="onClick()"
+[ngClass]="{'active': active, 'not-active': !active}"
 >
        <div class="message-menu-content">
             <div 

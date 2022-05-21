@@ -17,15 +17,15 @@ export class MessageMenuItemComponent {
     @Input('item')
     public item!: MessageItem
 
-    @Input('id')
-    public id!: string
+    @Input('itemId')
+    public itemId!: number
 
-    @Output() click = new EventEmitter<string>()
-
-    public isActive: boolean = false
+    @Output() onElemclick = new EventEmitter<number>()
+    
+    @Input('active')
+    public active: boolean = false
 
     onClick() {
-        this.isActive = !this.isActive
-        this.click.emit(this.id)
+        this.onElemclick.emit(this.itemId)
     }
 }
