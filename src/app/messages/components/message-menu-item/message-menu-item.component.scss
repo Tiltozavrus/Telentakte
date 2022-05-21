@@ -1,15 +1,11 @@
 @import './../../../../theme.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 .message-menu-item-avatar {
-    // width: 50px;
-    // height: 50px;
     background-size: cover;
 }
 
 .message-menu-item {
-    // height: 40px;
-    // position: relative;
-    background-color: $background-color;
+    // background-color: $background-color;
     height: 70px !important;
     min-width: 350px !important;
     overflow: hidden;
