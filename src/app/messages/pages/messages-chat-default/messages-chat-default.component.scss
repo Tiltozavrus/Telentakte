@@ -1,0 +1,18 @@
+@import './../../../../theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.chat-default {
+    color: $icon-fill;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    @extend .text-bold
+}
+
+.chat-default-background {
+    max-width: max-content;
+    max-height: max-content;
+    border-radius: 100px/70px;
+    background-color: $background-color;
+}

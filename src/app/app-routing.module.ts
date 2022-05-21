@@ -19,6 +19,16 @@ const routes: Routes = [
                     },
                     
                 ]
+            },
+            {
+                path: 'right',
+                outlet: 'right',
+                children: [
+                    {
+                        path: 'messages',
+                        loadChildren: () => MessagesModule,
+                    }
+                ]
             }
         ]
     }
