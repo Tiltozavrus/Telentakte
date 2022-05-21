@@ -11,12 +11,17 @@ export enum Icons {
 
 @Component({
     selector: 'main-menu',
-    templateUrl: 'main-menu.component.html',
+    templateUrl: './main-menu.component.html',
     styleUrls: [
-        'main-menu.component.scss'
+        './main-menu.component.scss'
     ],
 })
 export class MainMenuComponent implements OnInit {
+
+    constructor(
+        
+    ) {}
+
     public hideRight!: boolean
     public selectedIcon: Icons = Icons.Messages
 
@@ -52,6 +57,7 @@ export class MainMenuComponent implements OnInit {
 
     messagesClick() {
         this.selectedIcon = Icons.Messages
+        
     }
 
     settingsClick() {

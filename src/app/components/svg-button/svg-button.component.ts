@@ -22,6 +22,9 @@ export class SvgButton {
 
     @Input('active')
     active: boolean = false
+
+    // @Input('routerLink')
+    // routerLink: string = ''
     
     @Output() 
     click = new EventEmitter<void>()
