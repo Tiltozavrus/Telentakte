@@ -1,0 +1,1 @@
+export type MessengerType = "vk" | "tg"

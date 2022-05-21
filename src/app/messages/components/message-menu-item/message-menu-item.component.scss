@@ -126,3 +126,22 @@
     font-size: 12px;
     margin: 4px;
 }
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-box {
+    // position: absolute;
+}
+
+.src-logo {
+    width: 15px;
+    height: 15px;
+    
+    margin-left: 40px;
+    margin-top: 40px;
+    z-index: 2px;
+    position: absolute;
+}

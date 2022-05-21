@@ -5,9 +5,17 @@ class="message-menu-item"
 >
        <div class="message-menu-content">
             <div 
-            class="avatar message-menu-content-item"
-            style="background-image: url('{{item.chatImageUrl}}');"
+            class="message-menu-content-item avatar-container"
             >
+                <div
+                class="avatar avatar-box"
+                style="background-image: url('{{item.chatImageUrl}}');"
+                >
+                <img
+                class="src-logo avatar-box"
+                src="assets/svg/{{item.msgType}}_logo.svg"
+                >
+                </div>
             </div>
             
             <div class="info">
