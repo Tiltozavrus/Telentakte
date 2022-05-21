@@ -26,13 +26,17 @@ class="message-menu-item"
                     </div>
                     <div 
                     class="message-item-message"
+                    [ngClass]="{'active-text': active, 'not-active-text': !active}"
                     [ngStyle]="{'-webkit-line-clamp': item.sender ? 1 : 2}"
                     >
                         {{item.lastMessage}}
                     </div>
                 </div>
                 <!-- Дата и еще инфа  -->
-                <div class="info-item-2">
+                <div 
+                class="info-item-2"
+                [ngClass]="{'active-text': active, 'not-active-text': !active}"
+                >
                     <div class="date">
                         {{item.date}}
                     </div>
