@@ -1,6 +1,10 @@
 <div class="messages-menu">
-    <div *ngFor="let item of items">
-        <message-menu-item [item]="item">
+    <div *ngFor="let item of items; let i = index" class="item">
+        <message-menu-item 
+        [item]="item" 
+        id="item-{{i}}"
+        (click)="onElemClick($event)"
+        >
         </message-menu-item>
         <div class="message-menu-divider">
     </div>

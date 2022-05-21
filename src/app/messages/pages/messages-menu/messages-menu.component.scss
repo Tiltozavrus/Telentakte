@@ -1,7 +1,12 @@
 @import './../../../../theme.scss';
 
 .messages-menu {
-    padding: 4px;
+    // А зачем тут padding?
+    // padding: 4px;
+}
+
+.item {
+    
 }
 
 div.message-menu-divider {
