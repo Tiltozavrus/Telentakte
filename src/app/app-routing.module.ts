@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { MessagesModule } from './messages/messages.module';
-import { MessagesMenuPage } from './messages/pages/messages-menu/messages-menu.component';
+import { OptionsModule } from './options/options.module';
 
 const routes: Routes = [
     {
@@ -17,6 +17,10 @@ const routes: Routes = [
                         path: 'messages',
                         loadChildren: () => MessagesModule,
                     },
+                    {
+                        path: 'options',
+                        loadChildren: () => OptionsModule,
+                    }
                     
                 ]
             },

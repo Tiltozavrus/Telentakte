@@ -15,20 +15,11 @@
                 src="assets/svg/messages.svg"
                 (click)="messagesClick()"
                 [active]="selectedIcon === 'messages'"
-                [routerLink]="[
-                {
-                    outlets: {
-                        left: ['left', 'messages', 'menu'],
-                        right: ['right', 'messages', 'chat', 'default']
-                    }
-                }
-                ]"
             ></svg-button>
             <svg-button 
                 src="assets/svg/setting.svg"
                 (click)="settingsClick()"
                 [active]="selectedIcon === 'options'"
-                
             ></svg-button>
         </div>
     </div>

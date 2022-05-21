@@ -67,11 +67,30 @@ export class MainMenuComponent implements OnInit {
 
     messagesClick() {
         this.selectedIcon = Icons.Messages
-        
+        this.router.navigate(
+            [
+                {
+                    outlets: {
+                        left: ['left', 'messages', 'menu'],
+                        right: ['right', 'messages', 'chat', 'default'],
+                    }
+                }
+            ]
+        )
     }
 
     settingsClick() {
         this.selectedIcon = Icons.Options
+        this.router.navigate(
+            [
+                {
+                    outlets: {
+                        left: ['left', 'options', 'menu'],
+                        // right: ['right', 'messages', 'chat', 'default'],
+                    }
+                }
+            ]
+        )
     }
     phoneClick() {
         this.selectedIcon = Icons.Phone
