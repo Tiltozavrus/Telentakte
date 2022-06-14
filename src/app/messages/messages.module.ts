@@ -21,7 +21,7 @@ import { MessagesChatDefaultComponent } from './pages/messages-chat-default/mess
         MessageMenuItemComponent,
         MessagesMenuPage,
         MessagesChatDefaultComponent,
-    ],
+    ], 
 })
 export class MessagesModule {
 

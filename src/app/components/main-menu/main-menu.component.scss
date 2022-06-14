@@ -1,4 +1,5 @@
 @import './../../../theme.scss';
+@import './../../../common.scss';
 
 .main-menu {
     display: flex;
@@ -25,6 +26,8 @@
 }
 
 .left-view {
+    @extend .not-selected;
+
     height: 100%;
     display: flex;
     flex-direction: column;
