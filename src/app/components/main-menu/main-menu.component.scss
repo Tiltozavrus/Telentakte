@@ -10,11 +10,17 @@
     height: 100%;
 }
 
+.left-view-header {
+    min-height: 50px;
+    border: 1px solid $element-color;
+}
+
 .left-view-main {
     background-color: $background-color;
     height: 100%;
     overflow: scroll;
     min-width: 358px !important;
+    border-right: 1px solid $element-color;
 }
 
 .left-view-footer {

@@ -24,6 +24,7 @@ export class MainMenuComponent implements OnInit {
     ) {}
 
     public hideRight!: boolean
+    public hideLeft!: boolean
     public selectedIcon: Icons = Icons.Messages
 
     public item: MessageItem = {
@@ -37,7 +38,7 @@ export class MainMenuComponent implements OnInit {
     width = 0
     ngOnInit(): void {
         this.width = window.innerWidth
-        this.calcHideRight()
+        this.calcHide()
         this.router.navigate(
             [
                 {
@@ -54,15 +55,29 @@ export class MainMenuComponent implements OnInit {
     onResize(event: Event) {
         const target = event.target as Window
         this.width = target.innerWidth
-        this.calcHideRight()
+        this.calcHide()
     }
 
-    private calcHideRight() {
-        if(this.width < 800) {
-            this.hideRight = true
+    private calcHide() {
+        if (this.router.parseUrl(this.router.url).root.children['right'].segments.reverse()[0].path === 'default') {
+            if(this.width < 800) {
+                this.hideRight = true
+            } else {
+                this.hideRight = false
+            }
         } else {
-            this.hideRight = false
+            if(this.width < 800) {
+                this.hideLeft = true
+            } else {
+                this.hideLeft = false
+            }
+
         }
+
+        console.log(
+            'hideLeft:', this.hideLeft,
+            'hideRight:', this.hideRight,
+        )
     }
 
     messagesClick() {

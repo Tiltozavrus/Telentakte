@@ -31,6 +31,10 @@ const routes: Routes = [
                     {
                         path: 'messages',
                         loadChildren: () => MessagesModule,
+                    },
+                    {
+                        path: 'options',
+                        loadChildren: () => OptionsModule,
                     }
                 ]
             }

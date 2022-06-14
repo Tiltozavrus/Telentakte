@@ -16,7 +16,7 @@ export class OptionsPage {
         {
             imgSrc: "assets/svg/account-icon.svg",
             text: "Аккаунты",
-            destPage: "accounts"
+            destPage: "account"
         }
     ]
 

@@ -12,5 +12,13 @@ class="options-button"
         <div class="options-button-text">
             {{this.optionItem.text}}
         </div>
+        <div 
+        class="right-arrow"
+        *ngIf="!selected"
+        >
+            <img
+            src="assets/svg/right-arrow.svg"
+            >
+        </div>
     </div>
 </div>

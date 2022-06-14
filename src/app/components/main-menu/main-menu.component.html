@@ -2,7 +2,13 @@
     <div 
     class="left-view main-menu-item-left"
     [ngClass]="{'main-menu-item': hideRight}"
+    *ngIf="!hideLeft"
     >
+        <div
+        class="left-view-header"
+        >
+            
+        </div>
         <div 
         class="left-view-main main-menu-item"
         >
@@ -25,7 +31,7 @@
     </div>
     <div 
     class="right-view main-menu-item"
-    [hidden]="hideRight"
+    *ngIf="!hideRight"
     [ngClass]="{'on_center': !hideRight}"
     >
         <router-outlet name="right"></router-outlet>

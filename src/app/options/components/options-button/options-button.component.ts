@@ -21,6 +21,15 @@ export class OptionsButton {
     @Input('selected') selected: boolean = false
 
     public onClick() {
-        
+        this.router.navigate(
+            [
+                {
+                    outlets: {
+                        right: ['right', 'options' ,this.optionItem.destPage]
+                    }
+                        
+                }
+            ]
+        )
     }
 }
