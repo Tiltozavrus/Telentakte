@@ -1,0 +1,16 @@
+<div
+class="options-button"
+(click)="onClick()"
+[ngClass]="{'options-button-selected': selected}"
+>
+    <div class="options-button-containter">
+        <div class="options-button-image">
+            <img
+            [src]="this.optionItem.imgSrc"
+            >
+        </div>
+        <div class="options-button-text">
+            {{this.optionItem.text}}
+        </div>
+    </div>
+</div>

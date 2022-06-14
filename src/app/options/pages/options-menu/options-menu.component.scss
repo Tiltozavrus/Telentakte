@@ -1,5 +1,11 @@
+@import "./../../../../theme.scss";
+
 .options-menu {
     text-align: justify;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.selected-item {
+    background-color: $active-element-color;
 }

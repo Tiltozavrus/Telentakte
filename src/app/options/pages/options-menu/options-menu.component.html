@@ -1,3 +1,11 @@
 <div class="options-menu">
     <add-account-button></add-account-button>
+    <div *ngFor="let item of optionItems">
+        <options-button
+        [optionItem]="item"
+        [selected]="item === this.selectedItem"
+        (click)="onSelect(item)"
+        >
+        </options-button>
+    </div>
 </div>

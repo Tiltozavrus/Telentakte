@@ -1,7 +1,7 @@
 @import './../../../../theme.scss';
 @import './../../../../common.scss';
 
-.add-account-button {
+.options-button {
     @extend .not-selected;
     
     padding-left: 10px;
@@ -11,11 +11,11 @@
     border-radius: 10px;
 }
 
-.add-account-button:active {
-    background-color: #0e1720;
+.options-button-selected {
+    background-color: $active-element-color
 }
 
-.add-account-button-container {
+.options-button-containter {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,9 +23,8 @@
     justify-content: left;
 }
 
-.add-account-button-image {
+.options-button-image {
     img {
-        filter: invert(43%) sepia(19%) saturate(2239%) hue-rotate(167deg) brightness(100%) contrast(100%);
         width: 25px;
         height: 25px;
         pointer-events: none;
@@ -33,12 +32,10 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    
 }
 
-.add-account-button-text {
+.options-button-text {
     @extend .text-normal;
     font-size: 14px;
-    color: #2d82c6;
     padding-left: 10px;
 }
