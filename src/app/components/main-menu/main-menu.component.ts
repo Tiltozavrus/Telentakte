@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { NavigationEnd, Router } from "@angular/router";
 import { MessageItem } from "../../models/MessageItem/MessageItem";
 
 // import { ResizedEvent } from 'angular-resize-event';
@@ -21,10 +21,17 @@ export class MainMenuComponent implements OnInit {
 
     constructor(
         private readonly router: Router,
-    ) {}
+    ) {
+        this.router.events.subscribe(
+            (event) => {
+                if(event instanceof NavigationEnd) {
+                    this.calcHide()
+                }
+            }
+        )
+    }
 
-    public hideRight!: boolean
-    public hideLeft!: boolean
+    public hide!: "left" | "right" | "none"
     public selectedIcon: Icons = Icons.Messages
 
     public item: MessageItem = {
@@ -59,25 +66,22 @@ export class MainMenuComponent implements OnInit {
     }
 
     private calcHide() {
-        if (this.router.parseUrl(this.router.url).root.children['right'].segments.reverse()[0].path === 'default') {
-            if(this.width < 800) {
-                this.hideRight = true
-            } else {
-                this.hideRight = false
-            }
+        const isDefault = this.router.parseUrl(this.router.url).root.children['right'].segments.reverse()[0].path === 'default'
+        if (isDefault && this.width < 800) {
+            this.hide = "right"
+        } else if (!isDefault && this.width < 800){
+            this.hide = "left"
         } else {
-            if(this.width < 800) {
-                this.hideLeft = true
-            } else {
-                this.hideLeft = false
-            }
-
+            this.hide = "none"
         }
 
         console.log(
-            'hideLeft:', this.hideLeft,
-            'hideRight:', this.hideRight,
+            "hdie: ", this.hide,
         )
+    }
+
+    private calcHideRight() {
+
     }
 
     messagesClick() {

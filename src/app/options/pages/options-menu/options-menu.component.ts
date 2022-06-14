@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { OptionItem } from "../../models/OptionItem/OptionItem";
 
 
@@ -9,7 +10,14 @@ import { OptionItem } from "../../models/OptionItem/OptionItem";
         './options-menu.component.scss',
     ]
 })
-export class OptionsPage {
+export class OptionsPage implements OnInit {
+
+    constructor(
+        private readonly router: Router,
+    ) {
+        
+    }
+
     public selectedItem?: OptionItem
 
     public optionItems: OptionItem[] = [
@@ -19,6 +27,18 @@ export class OptionsPage {
             destPage: "account"
         }
     ]
+
+    ngOnInit(): void {
+        const lastArg = this.router.parseUrl(this.router.url).root.children['right'].segments.reverse()[0].path
+
+        this.optionItems.forEach(
+            (item) => {
+                if(item.destPage === lastArg) {
+                    this.selectedItem = item
+                }
+            }
+        )
+    }
 
     onSelect(item: OptionItem) {
         this.selectedItem = item

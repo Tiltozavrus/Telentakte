@@ -1,8 +1,8 @@
 <div class="main-menu">
     <div 
     class="left-view main-menu-item-left"
-    [ngClass]="{'main-menu-item': hideRight}"
-    *ngIf="!hideLeft"
+    [ngClass]="{'main-menu-item': true}"
+    *ngIf="hide !== 'left'"
     >
         <div
         class="left-view-header"
@@ -31,8 +31,8 @@
     </div>
     <div 
     class="right-view main-menu-item"
-    *ngIf="!hideRight"
-    [ngClass]="{'on_center': !hideRight}"
+    *ngIf="hide !== 'right'"
+    [ngClass]="{'on_center': true}"
     >
         <router-outlet name="right"></router-outlet>
     </div>
