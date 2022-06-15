@@ -15,4 +15,16 @@
     max-height: max-content;
     border-radius: 100px/70px;
     background-color: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-default-page {
+    height: 100% !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

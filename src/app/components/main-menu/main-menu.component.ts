@@ -74,10 +74,6 @@ export class MainMenuComponent implements OnInit {
         } else {
             this.hide = "none"
         }
-
-        console.log(
-            "hdie: ", this.hide,
-        )
     }
 
     private calcHideRight() {

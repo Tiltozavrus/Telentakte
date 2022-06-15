@@ -1,0 +1,13 @@
+@import './../../../../theme.scss';
+.account-options {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.account-options-body {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: lighten($black-background-color, 2%);
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { NavigationEnd, NavigationStart, Router } from "@angular/router";
+import { Subscription } from "rxjs";
 import { OptionItem } from "../../models/OptionItem/OptionItem";
 
 
@@ -10,12 +11,20 @@ import { OptionItem } from "../../models/OptionItem/OptionItem";
         './options-menu.component.scss',
     ]
 })
-export class OptionsPage implements OnInit {
+export class OptionsPage implements OnInit, OnDestroy {
 
     constructor(
         private readonly router: Router,
     ) {
-        
+        this.routeSubscription = this.router.events.subscribe(
+            (event) => {
+                if (event instanceof NavigationEnd) {
+                    console.log("navigate to: ", event.url)
+                    const lastArg = this.router.parseUrl(event.url).root.children['right'].segments.reverse()[0].path
+                    this.someSelected(lastArg)
+                }
+            }
+        )
     }
 
     public selectedItem?: OptionItem
@@ -28,16 +37,30 @@ export class OptionsPage implements OnInit {
         }
     ]
 
+    private routeSubscription!: Subscription
+
     ngOnInit(): void {
         const lastArg = this.router.parseUrl(this.router.url).root.children['right'].segments.reverse()[0].path
+        this.someSelected(lastArg)
+    }
 
-        this.optionItems.forEach(
-            (item) => {
-                if(item.destPage === lastArg) {
-                    this.selectedItem = item
-                }
+    
+    ngOnDestroy(): void {
+        this.routeSubscription.unsubscribe()
+    }
+    
+    private someSelected(lastArg: string) {
+        const filtered = this.optionItems.filter(
+            (value) => {
+                value.destPage === lastArg
             }
         )
+
+        if(filtered.length > 0) {
+            this.selectedItem = filtered.pop()
+        } else {
+            this.selectedItem = undefined
+        }
     }
 
     onSelect(item: OptionItem) {

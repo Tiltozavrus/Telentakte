@@ -11,6 +11,10 @@
     border-radius: 10px;
 }
 
+.options-button:active {
+    background-color: #0e1720;
+}
+
 .options-button-selected {
     background-color: $active-element-color
 }
