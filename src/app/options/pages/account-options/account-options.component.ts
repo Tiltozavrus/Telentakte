@@ -27,7 +27,12 @@ export class AccountOptions {
                         right: this.routingService.getRightDefaultUrl().split('/')
                     }
                 }
-            ]
+            ],
+            {
+                state: {
+                    action: "close"
+                }
+            }
         )
     }
 }

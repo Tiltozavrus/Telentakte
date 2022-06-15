@@ -1,8 +1,11 @@
-<div class="main-menu">
+<div 
+class="main-menu"
+>
     <div 
     class="left-view main-menu-item-left"
     [ngClass]="{'main-menu-item': true}"
     *ngIf="hide !== 'left'"
+    [@left]
     >
         <div
         class="left-view-header"
@@ -32,6 +35,7 @@
     <div 
     class="right-view main-menu-item"
     *ngIf="hide !== 'right'"
+    [@right]
     >
         <router-outlet name="right"></router-outlet>
     </div>

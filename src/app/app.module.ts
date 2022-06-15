@@ -25,7 +25,7 @@ import { RoutingModule } from './core/routing';
                 default: "right/messages/chat/default"
             },
         },
-    )
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],

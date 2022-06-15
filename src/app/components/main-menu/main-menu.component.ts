@@ -1,5 +1,6 @@
+import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
+import { NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { MessageItem } from "../../models/MessageItem/MessageItem";
 
 // import { ResizedEvent } from 'angular-resize-event';
@@ -16,6 +17,91 @@ export enum Icons {
     styleUrls: [
         './main-menu.component.scss'
     ],
+    animations: [
+        trigger(
+            'right',
+            [
+                transition(
+                    ':enter',
+                    [
+                        style(
+                            {
+                                transform: 'translateX(100%)',
+                                // minWidth: '100% !important'
+                            }
+                        ),
+                        animate(
+                            '200ms ease-in-out',
+                            style(
+                                {
+                                    transform: 'translateX(0%)',
+                                }
+                            )
+                        ),
+                    ]
+                ),
+                transition(
+                    ':leave',
+                    [
+                        style(
+                            {
+                                transform: 'translateX(0%)',
+                            }
+                        ),
+                        animate(
+                            '200ms ease-in-out',
+                            style(
+                                {
+                                    transform: 'translateX(100%)'
+                                }
+                            )
+                        ),
+                    ]
+                )
+            ],
+        ),
+        trigger(
+            'left',
+            [
+                transition(
+                    ':enter',
+                    [
+                        style(
+                            {
+                                transform: 'translateX(-100%)',
+                            }
+                        ),
+                        animate(
+                            '200ms ease-in-out',
+                            style(
+                                {
+                                    transform: 'translateX(0%)'
+                                }
+                            )
+                        ),
+                    ]
+                ),
+                transition(
+                    ':leave',
+                    [
+                        style(
+                            {
+                                transform: 'translateX(0%)',
+                            }
+                        ),
+                        animate(
+                            '100ms ease-in-out',
+                            style(
+                                {
+                                    transform: 'translateX(-100%)'
+                                }
+                            )
+                        ),
+                    ]
+                ),
+            ],
+        )
+    ]
 })
 export class MainMenuComponent implements OnInit {
 
@@ -24,7 +110,9 @@ export class MainMenuComponent implements OnInit {
     ) {
         this.router.events.subscribe(
             (event) => {
-                if(event instanceof NavigationEnd) {
+                if (event instanceof NavigationStart) {
+                   
+                } else if(event instanceof NavigationEnd) {
                     this.calcHide()
                 }
             }
@@ -33,6 +121,7 @@ export class MainMenuComponent implements OnInit {
 
     public hide!: "left" | "right" | "none"
     public selectedIcon: Icons = Icons.Messages
+    public isAnim!: boolean
 
     public item: MessageItem = {
         chatImageUrl: "https://sun9-76.userapi.com/s/v1/if2/r_l7DbiazSoO-I-5xbeKbeJh2lAOB8_eXAGRLKsAgF6IkimMMb2lc0_OUdH8jclo-_-d9MT7NMYUZqrzWr9w5vUm.jpg?size=1436x2160&quality=95&type=album",
@@ -76,10 +165,6 @@ export class MainMenuComponent implements OnInit {
         }
     }
 
-    private calcHideRight() {
-
-    }
-
     messagesClick() {
         this.selectedIcon = Icons.Messages
         this.router.navigate(
@@ -90,7 +175,12 @@ export class MainMenuComponent implements OnInit {
                         right: ['right', 'messages', 'chat', 'default'],
                     }
                 }
-            ]
+            ],
+            {
+                state: {
+                    action: "change"
+                }
+            }
         )
     }
 
@@ -104,9 +194,15 @@ export class MainMenuComponent implements OnInit {
                         // right: ['right', 'messages', 'chat', 'default'],
                     }
                 }
-            ]
+            ],
+            {
+                state: {
+                    action: "change"
+                }
+            }
         )
     }
+
     phoneClick() {
         this.selectedIcon = Icons.Phone
     }

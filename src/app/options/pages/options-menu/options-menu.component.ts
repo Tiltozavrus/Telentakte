@@ -18,8 +18,7 @@ export class OptionsPage implements OnInit, OnDestroy {
     ) {
         this.routeSubscription = this.router.events.subscribe(
             (event) => {
-                if (event instanceof NavigationEnd) {
-                    console.log("navigate to: ", event.url)
+                if (event instanceof NavigationStart) {
                     const lastArg = this.router.parseUrl(event.url).root.children['right'].segments.reverse()[0].path
                     this.someSelected(lastArg)
                 }
@@ -52,10 +51,9 @@ export class OptionsPage implements OnInit, OnDestroy {
     private someSelected(lastArg: string) {
         const filtered = this.optionItems.filter(
             (value) => {
-                value.destPage === lastArg
+                return value.destPage === lastArg
             }
         )
-
         if(filtered.length > 0) {
             this.selectedItem = filtered.pop()
         } else {

@@ -27,9 +27,13 @@ export class OptionsButton {
                     outlets: {
                         right: ['right', 'options' ,this.optionItem.destPage]
                     }
-                        
                 }
-            ]
+            ],
+            {
+                state: {
+                    action: "open",
+                }
+            }
         )
     }
 }
